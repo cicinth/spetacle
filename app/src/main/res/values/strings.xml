@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SPECTACLE</string>
+    <string name="texto_acao_inicial">O que deseja fazer?</string>
+    <string name="musica">Música</string>
+    <string name="filme">Filme</string>
+    <string name="desc_musica_inicial">Veja suas músicas disponiveis</string>
+    <string name="lista_filmes">Meus filmes</string>
+</resources>
