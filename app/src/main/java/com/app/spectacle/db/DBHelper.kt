@@ -31,4 +31,23 @@ class DBHelper(contexto: Context) : SQLiteOpenHelper(contexto, DB_NAME,null, 1 )
         return filme
     }
 
+    val filmeList: List<Filme>
+        get() {
+            val listaFilme = ArrayList<Filme>()
+            val selectQuery = "SELECT * FROM " + Filme.TABLE_NAME
+            val db = this.writableDatabase
+            val cursor = db.rawQuery(selectQuery, null)
+            if(cursor.moveToFirst()){
+                do {
+                    val id = cursor.getInt(cursor.getColumnIndexOrThrow(Filme.ID_COLUMN))
+                    val titulo = cursor.getString(cursor.getColumnIndexOrThrow(Filme.TITULO_COLUMN))
+
+                    val filme = Filme(id, titulo)
+                    listaFilme.add(filme)
+                }while (cursor.moveToNext())
+            }
+            db.close()
+            return listaFilme
+        }
+
 }

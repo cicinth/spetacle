@@ -4,5 +4,6 @@
     <string name="musica">Música</string>
     <string name="filme">Filme</string>
     <string name="desc_musica_inicial">Veja suas músicas disponiveis</string>
+    <string name="desc_filme_inicial">Veja seus filmes disponiveis</string>
     <string name="lista_filmes">Meus filmes</string>
 </resources>

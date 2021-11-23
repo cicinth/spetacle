@@ -43,4 +43,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_acao_inicial"/>
+
+    <include android:id="@+id/card_filme"
+        layout="@layout/card_filme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_musica"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
