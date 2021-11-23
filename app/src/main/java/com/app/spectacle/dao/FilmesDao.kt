@@ -1,21 +1,18 @@
 package com.app.spectacle.dao
 
-import android.content.Context
-import com.app.spectacle.db.DBHelper
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.app.spectacle.models.Filme
 
-class FilmesDao {
+@Dao
+interface FilmesDao {
 
-    private var db: DBHelper? = null
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun salvar(filme: Filme)
 
-    fun salvar(contexto: Context, filme: Filme): Any{
-        db = DBHelper(contexto)
-        return db!!.insertFilme(filme)
-    }
-
-    fun buscarFilme(contexto: Context) : List<Filme>{
-        db = DBHelper(contexto)
-        return db!!.filmeList
-    }
+    @Query("SELECT * FROM filmes")
+    fun buscarFilme() : List<Filme>
 
 }

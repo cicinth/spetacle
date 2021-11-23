@@ -32,9 +32,9 @@ class ListaFilmes : AppCompatActivity(R.layout.activity_lista_filmes) {
         }
     }
     fun configRecycleView(){
-        val filmes : List<Filme> = FilmesDao().buscarFilme(this)
+        val filmes : List<Filme>? = SpectacleApplication.database?.filmeDao()?.buscarFilme()
         Log.i("ListaFilmes", "$filmes")
         val filmesView = binding.listaFilmes
-        filmesView.adapter = ListaFilmesAdapter(FilmesDao().buscarFilme(this), this)
+        filmesView.adapter = filmes?.let { ListaFilmesAdapter(it, this) }
     }
 }

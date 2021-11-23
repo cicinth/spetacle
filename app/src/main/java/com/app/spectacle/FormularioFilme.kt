@@ -31,7 +31,7 @@ class FormularioFilme : AppCompatActivity() {
         val novoFilme = Filme(titulo = titulo)
 
         Log.i("FormularioFilme","titulo $titulo")
-        val filme = FilmesDao().salvar(this, novoFilme)
+        val filme = SpectacleApplication.database?.filmeDao()?.salvar(novoFilme)
         Log.i("FormularioFilme", "$filme")
 
         AlertDialog.Builder(this)
