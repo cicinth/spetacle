@@ -9,7 +9,7 @@ class SpectacleApplication:Application() {
     @Override
     override fun onCreate() {
         super.onCreate()
-        database = Room.databaseBuilder(this, AppDataBase::class.java, "spectacle")
+        database = Room.databaseBuilder(this, AppDataBase::class.java, "spectacle_database_2")
             .allowMainThreadQueries().build()
     }
 

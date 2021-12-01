@@ -12,6 +12,16 @@
         android:layout_height="match_parent"
         tools:context=".FormularioFilme">
 
+
+        <ImageView
+            android:id="@+id/image_carregar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/upload" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_field_titulo_filme"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -21,7 +31,7 @@
                 android:background="@color/white"
                 android:hint="@string/filme"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/image_carregar">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/form_filme_titulo"
